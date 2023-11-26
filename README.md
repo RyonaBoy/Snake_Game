@@ -46,7 +46,7 @@ This work is licensed under a
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
 
 
-
+-snakes can change directions in 180°
 -snake doesn't die when hitting obstacle
 -snake dies after certain time elapsed without food
 -up to 4 opponent snakes added which compete for food using A*
