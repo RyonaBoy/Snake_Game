@@ -2,13 +2,19 @@
 #include <cmath>
 #include <iostream>
 
-void Snake::Update() {
+bool Snake::Update() {
+  time_to_live--;
+  //std::cout << time_to_live << std::endl;
+  if(time_to_live <= 0){ return false; }
+
   SDL_Point prev_cell{static_cast<int>(head_x), static_cast<int>(head_y)};  // We first capture the head's cell before updating.
   UpdateHead();
   SDL_Point current_cell{static_cast<int>(head_x), static_cast<int>(head_y)};  // Capture the head's cell after updating.
 
   // Update all of the body vector items if the snake head has moved to a new cell.
   if (current_cell.x != prev_cell.x || current_cell.y != prev_cell.y) { UpdateBody(current_cell, prev_cell); }
+
+  return true;
 }
 
 void Snake::UpdateHead() {
@@ -52,16 +58,12 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) 
     growing = false;
     size++;
   }
-
-#if 0
-  // Check if the snake has died.
-  for (auto const &item : body) {
-    if (current_head_cell.x == item.x && current_head_cell.y == item.y) { alive = false; }
-  }
-#endif
 }
 
-void Snake::GrowBody() { growing = true; }
+void Snake::GrowBody(int food_weight) {
+  growing = true;
+  time_to_live += food_weight*2;
+}
 
 // Inefficient method to check if cell is occupied by snake.
 bool Snake::SnakeCell(int x, int y) {
@@ -75,3 +77,5 @@ bool Snake::SnakeCell(int x, int y) {
   }
   return false;
 }
+
+uint32_t Snake::GetTimeToLive() const { return time_to_live; }

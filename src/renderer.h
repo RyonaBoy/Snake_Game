@@ -5,6 +5,8 @@
 
 #include "SDL.h"
 #include "snake.h"
+#include "kendall_jenner.h"
+#include "sumo_wrestler.h"
 
 class Renderer {
  public:
@@ -13,8 +15,8 @@ class Renderer {
   ~Renderer();
 
   //void Render(Snake const snake, SDL_Point const &food);
-  void Render(const std::vector<std::unique_ptr<Snake>>& snakes, SDL_Point const &food);
-  void UpdateWindowTitle(int score, int fps);
+  void Render(const std::vector<std::unique_ptr<Snake>>& snakes, const Food* const food);
+  void UpdateWindowTitle(int time_to_live, int fps);
 
  private:
   SDL_Window *sdl_window;

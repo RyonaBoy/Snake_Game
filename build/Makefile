@@ -150,6 +150,33 @@ src/controller.cpp.s:
 	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/controller.cpp.s
 .PHONY : src/controller.cpp.s
 
+src/food.o: src/food.cpp.o
+
+.PHONY : src/food.o
+
+# target to build an object file
+src/food.cpp.o:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/food.cpp.o
+.PHONY : src/food.cpp.o
+
+src/food.i: src/food.cpp.i
+
+.PHONY : src/food.i
+
+# target to preprocess a source file
+src/food.cpp.i:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/food.cpp.i
+.PHONY : src/food.cpp.i
+
+src/food.s: src/food.cpp.s
+
+.PHONY : src/food.s
+
+# target to generate assembly for a file
+src/food.cpp.s:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/food.cpp.s
+.PHONY : src/food.cpp.s
+
 src/game.o: src/game.cpp.o
 
 .PHONY : src/game.o
@@ -176,6 +203,33 @@ src/game.s: src/game.cpp.s
 src/game.cpp.s:
 	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
+
+src/kendall_jenner.o: src/kendall_jenner.cpp.o
+
+.PHONY : src/kendall_jenner.o
+
+# target to build an object file
+src/kendall_jenner.cpp.o:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/kendall_jenner.cpp.o
+.PHONY : src/kendall_jenner.cpp.o
+
+src/kendall_jenner.i: src/kendall_jenner.cpp.i
+
+.PHONY : src/kendall_jenner.i
+
+# target to preprocess a source file
+src/kendall_jenner.cpp.i:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/kendall_jenner.cpp.i
+.PHONY : src/kendall_jenner.cpp.i
+
+src/kendall_jenner.s: src/kendall_jenner.cpp.s
+
+.PHONY : src/kendall_jenner.s
+
+# target to generate assembly for a file
+src/kendall_jenner.cpp.s:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/kendall_jenner.cpp.s
+.PHONY : src/kendall_jenner.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -258,6 +312,33 @@ src/snake.cpp.s:
 	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/snake.cpp.s
 .PHONY : src/snake.cpp.s
 
+src/sumo_wrestler.o: src/sumo_wrestler.cpp.o
+
+.PHONY : src/sumo_wrestler.o
+
+# target to build an object file
+src/sumo_wrestler.cpp.o:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/sumo_wrestler.cpp.o
+.PHONY : src/sumo_wrestler.cpp.o
+
+src/sumo_wrestler.i: src/sumo_wrestler.cpp.i
+
+.PHONY : src/sumo_wrestler.i
+
+# target to preprocess a source file
+src/sumo_wrestler.cpp.i:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/sumo_wrestler.cpp.i
+.PHONY : src/sumo_wrestler.cpp.i
+
+src/sumo_wrestler.s: src/sumo_wrestler.cpp.s
+
+.PHONY : src/sumo_wrestler.s
+
+# target to generate assembly for a file
+src/sumo_wrestler.cpp.s:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/sumo_wrestler.cpp.s
+.PHONY : src/sumo_wrestler.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -270,9 +351,15 @@ help:
 	@echo "... src/controller.o"
 	@echo "... src/controller.i"
 	@echo "... src/controller.s"
+	@echo "... src/food.o"
+	@echo "... src/food.i"
+	@echo "... src/food.s"
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/kendall_jenner.o"
+	@echo "... src/kendall_jenner.i"
+	@echo "... src/kendall_jenner.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -282,6 +369,9 @@ help:
 	@echo "... src/snake.o"
 	@echo "... src/snake.i"
 	@echo "... src/snake.s"
+	@echo "... src/sumo_wrestler.o"
+	@echo "... src/sumo_wrestler.i"
+	@echo "... src/sumo_wrestler.s"
 .PHONY : help
 
 

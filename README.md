@@ -45,17 +45,28 @@ This work is licensed under a
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
 
+feature changes
+-snake doesn't die when hitting obstacle or itself, instead dies after certain time elapsed without food
+-snake speed doesn't increase with consumed food, but is a randomly assigned genetic property
+-2 opponent snakes added which compete for food using A*
+-grid height and width changed to constants, therefore can safely be made public and accessed by a* method
+-game randomly spawns two types of food (Kendall Jenner and sumo wrestler) which prolong snake's life depending on its weight.
 
--snakes can change directions in 180°
--snake doesn't die when hitting obstacle
--snake dies after certain time elapsed without food
--up to 4 opponent snakes added which compete for food using A*
--different food subclasses including poisonous ones
--different allergic snake subclasses that die eating poisonous food
+Rubric Loops, Functions, I/O:
+-functions and control structures (game.h line 38 addition of A* method)
+-project uses data structures and immutable variables (game.h line 20 usage of vector, snake.h line 23, 24 usage of const variable)
 
--grid height and width hanged to constants, that nothing can mess with it and therefore safely made public and can be accessed by a*
+Rubric Object Oriented Programming:
+-one or more classes are added to the project and all members explicitly specified as public, protected or private (food.h, kendall_jenner.h, sumo_wrestler.h introduce new classes, location variable is hidden and accessed via getter method)
+-all class members that are set to argument values are initialized through member initialization list (game.cpp line 7-10, snake.h line 12)
+-all class member functions document their effects, either through function names, comments or formal documentation (game.h line 34, descriptive function name and comment for method AStar())
+-classes follow appropriate inheritance hierarchy with virtual and override functions (kendal_jenner.h, sumo_wrestler.h class KendallJenner and SumoWrestler are inherited from abstract class Food and override the pure virtual method GetWeight())
 
-TODO:
--snakes chase different food
--snakes with different colors
--in A* use move semantic and pointers instead of copying
+Rubric Memory Management:
+-two functions use pass-by-reference (game.h line 15 method Run(), snake.h line 33 method UpdateBody())
+-project uses RAII (game.h line 20 snake heap objects are managed by smart pointers. Being members of the stack variable "game", the smart pointer's destructors are called, thus the heap memory is freed automatically)
+-project uses smart pointers instead of raw pointers (game.h line 20, 23 usage of unique pointer for storing snakes and food)
+
+Rubric Concurrency:
+-project uses multithreading (game.cpp line 79, 81, usage of async tasks for updating snakes)
+-promise and future are used (game.cpp line 78, promise sets a boolean value indicating whether snake is alive which is received by future in caller thread)
